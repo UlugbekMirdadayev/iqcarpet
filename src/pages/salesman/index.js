@@ -3,6 +3,7 @@ import { Container } from "../../assets/styles/global.styles";
 import { NavLink } from "react-router-dom";
 import HideAction from "../../components/ui/hideAction";
 import {
+  CatalogContainer,
   // CatalogContainer,
   ColumnStyled,
   SalesmanAbout,
@@ -18,8 +19,7 @@ import linkedin from "../../static/img/linkedin.svg";
 import web from "../../static/img/web.svg";
 import location from "../../static/img/location.svg";
 import userStatic from "../../static/img/user-static.svg";
-// import Card from "./card";
-// import { ArrowIcon } from "../../components/icon";
+import { ArrowIcon } from "../../components/icon";
 
 // const filterMaps = [
 //   {
@@ -151,6 +151,34 @@ function Salesman() {
             <NavLink to="#">{"Подробнее >> "}</NavLink>
           </SalesmanAbout>
         </SalesmanContent>
+        <CatalogContainer>
+          <div className="title__catalog">
+            <h1>Каталог продавца</h1>
+            <small>2 620 товаров</small>
+          </div>
+          <div className="catelog-body">
+            <div className="col">
+              <div className="col">
+                <div className="col__item box">
+                  <div className="row">
+                    <button className="new__status">NEW!</button>
+                    <p>Новинки</p>
+                    <ArrowIcon />
+                  </div>
+                  <div className="row">
+                    <button className="old__status">Скидка</button>
+                    <p>Распродажа</p>
+                    <ArrowIcon />
+                  </div>
+                </div>
+              </div>
+              <div className="col">
+                <div className="title_col mt-3">Фильтры</div>
+                <div className="col__item filter"></div>
+              </div>
+            </div>
+          </div>
+        </CatalogContainer>
       </Container>
     </SalesmanContainer>
   );

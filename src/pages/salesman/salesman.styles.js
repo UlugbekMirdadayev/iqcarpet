@@ -166,9 +166,77 @@ export const SalesmanAbout = styled.div`
 
 export const CatalogContainer = styled.div`
   .title__catalog {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 120%;
-    color: #000000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    h1 {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 40px;
+      color: #000000;
+    }
+
+    small {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      padding-left: 20px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .catelog-body {
+    display: flex;
+    gap: 30px;
+    .col {
+      display: flex;
+      flex-direction: column;
+      .col__item {
+        &.box {
+          display: flex;
+          flex-direction: column;
+          background: #f6f9fe;
+          border-radius: 20px;
+          padding: 30px 20px;
+          gap: 15px;
+          .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            button {
+              border-radius: 48px;
+              padding: 5px 10px;
+              font-weight: 700;
+              font-size: 12px;
+              color: #000000;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              &.new__status {
+                background: #fcd901;
+                border: 1px solid #fcd901;
+              }
+              &.old__status {
+                background: #fe3501;
+                border: 1px solid #fe3501;
+                color: #fff;
+              }
+            }
+          }
+        }
+        &.filter-btns {
+        }
+      }
+      .title_col {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 120%;
+        color: #b3bcc5;
+        &.mt-3 {
+          margin: 30px 0;
+        }
+      }
+    }
   }
 `;
