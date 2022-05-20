@@ -19,8 +19,56 @@ import linkedin from "../../static/img/linkedin.svg";
 import web from "../../static/img/web.svg";
 import location from "../../static/img/location.svg";
 import userStatic from "../../static/img/user-static.svg";
-import { ArrowIcon } from "../../components/icon";
+import { ArrowIcon, LikeIcon, SelectArrowIcon } from "../../components/icon";
+import Select from "./../../components/form/select";
+import Carpet1 from "../../static/img/carpet11.png";
+import Carpet2 from "../../static/img/carpet22.png";
+import Carpet3 from "../../static/img/carpet33.png";
 
+export const Card = ({ data = {} }) => {
+  const [selected, setSelected] = React.useState(null);
+  const [liked, setLiked] = React.useState(false);
+  return (
+    <div className="col_item">
+      {data?.status && (
+        <div
+          style={{ background: data.status.background }}
+          className="col_item_sale"
+        >
+          <p style={{ color: data.status.color }}>{data.status.status}</p>
+        </div>
+      )}
+      <div className="col_item__img">
+        <img src={data.img} alt="item1" />
+      </div>
+      <div className="col_item__title">
+        <p>{data.name}</p>
+      </div>
+      <div className="col_item_price">
+        <p
+          style={
+            data.price.sale && {
+              textDecoration: "line-through",
+              color: "rgba(0, 0, 0, 0.6)",
+            }
+          }
+        >
+          {data.price.price}
+        </p>
+        <p style={{ color: " #FE3501" }}>{data.price.sale}</p>
+      </div>
+      <div className="col_item_cart">
+        <button
+          className={`${selected ? "cart_active" : ""}`}
+          onClick={() => setSelected(!selected)}
+        >
+          {selected ? "В корзине" : "В корзину"}
+        </button>
+        <LikeIcon onClick={() => setLiked(!liked)} liked={liked} />
+      </div>
+    </div>
+  );
+};
 // const filterMaps = [
 //   {
 //     id: 1,
@@ -43,47 +91,77 @@ import { ArrowIcon } from "../../components/icon";
 //     type: "vintage",
 //   },
 // ];
-// const carps = [
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 123,
-//     category: "vintage",
-//   },
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 13,
-//     category: "oriental",
-//   },
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 23,
-//     category: "modern",
-//   },
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 4443,
-//     category: "modern",
-//   },
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 1443,
-//     category: "designer",
-//   },
-//   {
-//     img: "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg",
-//     name: "Mato",
-//     price: 3423,
-//     category: "designer",
-//   },
-// ];
+const carps = [
+  {
+    img: Carpet1,
+    name: "Mato",
+    price: {
+      price: "65 000",
+      sale: "12 000",
+    },
+    category: "vintage",
+    status: false,
+  },
+  {
+    img: Carpet2,
+    name: "Mato",
+    price: {
+      price: "65 000",
+    },
+    category: "oriental",
+    status: {
+      status: "Скидка",
+      color: "#fff",
+      background: "#FE3501",
+    },
+  },
+  {
+    img: Carpet3,
+    name: "Mato",
+    price: {
+      price: "65 000",
+    },
+    category: "modern",
+    status: {
+      status: "NEW!",
+      color: "#000000",
+      background: "#FCD901",
+    },
+  },
+  {
+    img: Carpet3,
+    name: "Mato",
+    price: {
+      price: "65 000",
+      sale: "12 000",
+    },
+    category: "modern",
+    status: false,
+  },
+  {
+    img: Carpet2,
+    name: "Mato",
+    price: {
+      price: "65 000",
+      sale: "12 000",
+    },
+    category: "designer",
+    status: false,
+  },
+  {
+    img: Carpet1,
+    name: "Mato",
+    price: {
+      price: "65 000",
+      sale: "12 000",
+    },
+    category: "designer",
+    status: false,
+  },
+];
 
 function Salesman() {
-  // const [filter, setfilter] = React.useState(carps);
+  const [filter, setfilter] = React.useState(carps);
   return (
     <SalesmanContainer>
       <Container>
@@ -175,6 +253,26 @@ function Salesman() {
               <div className="col">
                 <div className="title_col mt-3">Фильтры</div>
                 <div className="col__item filter"></div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="col_two">
+                <div className="col_sort">
+                  <Select
+                    className="select"
+                    options={[
+                      {
+                        label: "По умолчанию",
+                        value: "default",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+              <div className="col_items">
+                {filter.map((item, i) => {
+                  return <Card key={i} data={item} />;
+                })}
               </div>
             </div>
           </div>

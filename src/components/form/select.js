@@ -29,13 +29,13 @@ function Select({ options = [], ...props }) {
     };
   }, [handleClickOutside]);
   return (
-    <SelectWrapper onClick={handleClick}>
+    <SelectWrapper {...props} onClick={handleClick}>
       <SelectedOption>
         {selected.label}
         <SelectArrowIcon />
       </SelectedOption>
       {isOpen && (
-        <SelectStyled {...props}>
+        <SelectStyled>
           {options.map((option) => (
             <option
               key={option.value}

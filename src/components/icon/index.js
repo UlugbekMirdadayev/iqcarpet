@@ -112,14 +112,16 @@ export const SelectArrowIcon = ({ className = "icon" }) => (
     />
   </svg>
 );
-export const LikeIcon = ({ className = "icon" }) => (
+export const LikeIcon = ({ className = "icon", liked = false, ...props }) => (
   <svg
+    {...props}
     className={className}
     width={22}
     height={20}
     viewBox="0 0 22 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={liked ? { fill: "#0052B9" } : {}}
   >
     <path
       fillRule="evenodd"
@@ -229,3 +231,21 @@ export const SearchIcon = ({ className = "icon", ...props }) => (
     />
   </svg>
 );
+
+// export const Arrow = ({ className = "icon", ...props }) => (
+//   <svg
+//     width="12"
+//     height="8"
+//     viewBox="0 0 12 8"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//   >
+//     <path
+//       d="M10.6673 1.50024L6.00065 6.75024L1.33398 1.50024"
+//       stroke="black"
+//       stroke-width="1.5"
+//       stroke-linecap="round"
+//       stroke-linejoin="round"
+//     />
+//   </svg>
+// );
