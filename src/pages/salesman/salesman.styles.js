@@ -352,6 +352,7 @@ export const CatalogContainer = styled.div`
             color: #0052b9;
             cursor: pointer;
             background: transparent;
+            user-select: none;
             &.cart_active {
               background: #0052b9;
               border: 2px solid #0052b9;
