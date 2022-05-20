@@ -227,7 +227,40 @@ export const CatalogContainer = styled.div`
             }
           }
         }
-        &.filter-btns {
+        &.filter {
+          .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-top: 17px;
+
+            &.br-top {
+              border-top: 2px solid #dfdfdf;
+              padding-top: 20px;
+              justify-content: space-between;
+              margin-bottom: 25px;
+            }
+            h3 {
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 120%;
+              color: #000000;
+            }
+            button {
+              background: none;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              border: 0;
+            }
+            p {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 120%;
+            }
+          }
         }
       }
       .title_col {
@@ -251,7 +284,6 @@ export const CatalogContainer = styled.div`
         border-radius: 55px;
         border: 1px solid #f5f5f5;
         padding: 14px 55px;
-
         p {
           font-style: normal;
           font-weight: 700;
@@ -268,6 +300,9 @@ export const CatalogContainer = styled.div`
           }
           option {
             background: #fff;
+            padding: 10px;
+            top: 100%;
+            display: none;
           }
         }
         svg {
@@ -287,6 +322,7 @@ export const CatalogContainer = styled.div`
         position: relative;
         border-radius: 2px;
         width: 255px;
+
         .col_item_sale {
           position: absolute;
           top: 10px;
@@ -358,6 +394,7 @@ export const CatalogContainer = styled.div`
               border: 2px solid #0052b9;
               border-radius: 4px;
               color: #fff;
+              font-weight: 700;
             }
           }
           svg {

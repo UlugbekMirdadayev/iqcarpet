@@ -31,18 +31,18 @@ function Select({ options = [], ...props }) {
   return (
     <SelectWrapper {...props} onClick={handleClick}>
       <SelectedOption>
-        {selected.label}
+        {selected?.label}
         <SelectArrowIcon />
       </SelectedOption>
       {isOpen && (
         <SelectStyled>
           {options.map((option) => (
             <option
-              key={option.value}
-              value={option.value}
+              key={option?.value}
+              value={option?.value}
               onMouseDown={() => handleSelect(option)}
             >
-              {option.label}
+              {option?.label}
             </option>
           ))}
         </SelectStyled>

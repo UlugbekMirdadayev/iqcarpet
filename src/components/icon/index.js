@@ -121,7 +121,11 @@ export const LikeIcon = ({ className = "icon", liked = false, ...props }) => (
     viewBox="0 0 22 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={liked ? { fill: "#0052B9" } : {}}
+    style={
+      liked
+        ? { fill: "#0052B9", transition: "200ms ease all" }
+        : { fill: "#fff", transition: "200ms ease all" }
+    }
   >
     <path
       fillRule="evenodd"
@@ -231,21 +235,54 @@ export const SearchIcon = ({ className = "icon", ...props }) => (
     />
   </svg>
 );
-
-// export const Arrow = ({ className = "icon", ...props }) => (
-//   <svg
-//     width="12"
-//     height="8"
-//     viewBox="0 0 12 8"
-//     fill="none"
-//     xmlns="http://www.w3.org/2000/svg"
-//   >
-//     <path
-//       d="M10.6673 1.50024L6.00065 6.75024L1.33398 1.50024"
-//       stroke="black"
-//       stroke-width="1.5"
-//       stroke-linecap="round"
-//       stroke-linejoin="round"
-//     />
-//   </svg>
-// );
+export const CloseIcon = ({ className = "icon", ...props }) => (
+  <svg
+    {...props}
+    className={className}
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.05037 3.05022L12.9499 12.9497"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.9499 3.05029L3.05037 12.9498"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const CheckBoxIcon = ({
+  className = "icon",
+  isChecked = true,
+  ...props
+}) => (
+  <svg
+    {...props}
+    className={className}
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill={isChecked ? "#0052b9" : "none"}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14.3345 0.750244H5.66549C2.64449 0.750244 0.750488 2.88924 0.750488 5.91624V14.0842C0.750488 17.1112 2.63549 19.2502 5.66549 19.2502H14.3335C17.3645 19.2502 19.2505 17.1112 19.2505 14.0842V5.91624C19.2505 2.88924 17.3645 0.750244 14.3345 0.750244Z"
+      stroke={isChecked ? "#0052b9" : "#B3BCC5"}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

@@ -19,7 +19,12 @@ import linkedin from "../../static/img/linkedin.svg";
 import web from "../../static/img/web.svg";
 import location from "../../static/img/location.svg";
 import userStatic from "../../static/img/user-static.svg";
-import { ArrowIcon, LikeIcon, SelectArrowIcon } from "../../components/icon";
+import {
+  ArrowIcon,
+  CheckBoxIcon,
+  CloseIcon,
+  LikeIcon,
+} from "../../components/icon";
 import Select from "./../../components/form/select";
 import Carpet1 from "../../static/img/carpet11.png";
 import Carpet2 from "../../static/img/carpet22.png";
@@ -28,6 +33,7 @@ import Carpet3 from "../../static/img/carpet33.png";
 export const Card = ({ data = {} }) => {
   const [selected, setSelected] = React.useState(null);
   const [liked, setLiked] = React.useState(false);
+
   return (
     <div className="col_item">
       {data?.status && (
@@ -62,39 +68,39 @@ export const Card = ({ data = {} }) => {
           className={`${selected ? "cart_active" : ""}`}
           onClick={() => setSelected(!selected)}
         >
-          {selected ? "В корзине" : "В корзину"}
+          {selected ? "В корзине!" : "В корзину"}
         </button>
         <LikeIcon onClick={() => setLiked(!liked)} liked={liked} />
       </div>
     </div>
   );
 };
-// const filterMaps = [
-//   {
-//     id: 1,
-//     name: "Восточный",
-//     type: "oriental",
-//   },
-//   {
-//     id: 2,
-//     name: "Современный",
-//     type: "modern",
-//   },
-//   {
-//     id: 3,
-//     name: "Дизайнерский",
-//     type: "designer",
-//   },
-//   {
-//     id: 4,
-//     name: "Винтажный",
-//     type: "vintage",
-//   },
-// ];
+const filterMaps = [
+  {
+    id: 1,
+    name: "Восточный",
+    type: "oriental",
+  },
+  {
+    id: 2,
+    name: "Современный",
+    type: "modern",
+  },
+  {
+    id: 3,
+    name: "Дизайнерский",
+    type: "designer",
+  },
+  {
+    id: 4,
+    name: "Винтажный",
+    type: "vintage",
+  },
+];
 const carps = [
   {
     img: Carpet1,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
       sale: "12 000",
@@ -104,7 +110,7 @@ const carps = [
   },
   {
     img: Carpet2,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
     },
@@ -117,7 +123,7 @@ const carps = [
   },
   {
     img: Carpet3,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
     },
@@ -130,7 +136,7 @@ const carps = [
   },
   {
     img: Carpet3,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
       sale: "12 000",
@@ -140,7 +146,7 @@ const carps = [
   },
   {
     img: Carpet2,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
       sale: "12 000",
@@ -150,7 +156,7 @@ const carps = [
   },
   {
     img: Carpet1,
-    name: "Mato",
+    name: "Название ковра",
     price: {
       price: "65 000",
       sale: "12 000",
@@ -162,6 +168,7 @@ const carps = [
 
 function Salesman() {
   const [filter, setfilter] = React.useState(carps);
+  const [isActive, setIsActive] = React.useState("");
   return (
     <SalesmanContainer>
       <Container>
@@ -252,21 +259,43 @@ function Salesman() {
               </div>
               <div className="col">
                 <div className="title_col mt-3">Фильтры</div>
-                <div className="col__item filter"></div>
+                <div className="col__item filter">
+                  <div className="row br-top">
+                    <h3>Стиль</h3>
+                    <button>
+                      <CloseIcon
+                        onClick={() => {
+                          setfilter(carps);
+                          setIsActive(null);
+                        }}
+                      />
+                    </button>
+                  </div>
+                  {filterMaps.map((item, index) => (
+                    <div
+                      onClick={() => {
+                        setIsActive(item.type);
+                        setfilter(
+                          carps.filter((__res) => __res.category === item.type)
+                        );
+                      }}
+                      className="row"
+                      key={index}
+                    >
+                      <CheckBoxIcon isChecked={item.type === isActive} />
+                      <p>{item.name}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="col">
               <div className="col_two">
                 <div className="col_sort">
-                  <Select
-                    className="select"
-                    options={[
-                      {
-                        label: "По умолчанию",
-                        value: "default",
-                      },
-                    ]}
-                  />
+                  <Select className="select" options={[{
+                    value: 'Сортировка',
+                    label: 'Сортировка',
+                  }]} />
                 </div>
               </div>
               <div className="col_items">
