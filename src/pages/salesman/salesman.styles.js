@@ -174,6 +174,11 @@ export const CatalogContainer = styled.div`
     @media screen and (max-width: 1150px) {
       margin-top: 40px;
     }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
 
     h1 {
       font-weight: 600;
@@ -183,6 +188,9 @@ export const CatalogContainer = styled.div`
       @media screen and (max-width: 1150px) {
         font-size: 30px;
         line-height: 30px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 26px;
       }
     }
 
@@ -194,6 +202,10 @@ export const CatalogContainer = styled.div`
       color: rgba(0, 0, 0, 0.7);
       @media screen and (max-width: 1150px) {
         font-size: 12px;
+      }
+      @media screen and (max-width: 768px) {
+        padding-left: 0;
+        font-size: 14px;
       }
     }
   }
@@ -246,24 +258,50 @@ export const CatalogContainer = styled.div`
           }
         }
         &.filter {
+          @media screen and (max-width: 768px) {
+            flex-direction: row;
+            display: flex;
+            padding: 20px 0;
+            border-top: 2px solid #dfdfdf;
+            border-bottom: 2px solid #dfdfdf;
+          }
           .row {
             display: flex;
             align-items: center;
             gap: 10px;
             cursor: pointer;
             margin-top: 17px;
-
+            @media screen and (max-width: 768px) {
+              border: 1px solid rgba(0, 0, 0, 0.6);
+              border-radius: 55px;
+              padding: 10px;
+              margin: 0 5px;
+            }
             &.br-top {
               border-top: 2px solid #dfdfdf;
               padding-top: 20px;
               justify-content: space-between;
               margin-bottom: 25px;
+              @media screen and (max-width: 768px) {
+                padding: 10px;
+                margin: 0 5px;
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                position: relative;
+                width: 40px;
+                height: 40px;
+              }
             }
             h3 {
               font-weight: 700;
               font-size: 20px;
               line-height: 120%;
               color: #000000;
+              @media screen and (max-width: 768px) {
+                opacity: 0;
+                font-size: 0;
+                width: 20px;
+                height: 20px;
+              }
             }
             button {
               background: none;
@@ -272,6 +310,13 @@ export const CatalogContainer = styled.div`
               justify-content: center;
               cursor: pointer;
               border: 0;
+              @media screen and (max-width: 768px) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+              }
             }
             p {
               font-weight: 400;
@@ -281,19 +326,95 @@ export const CatalogContainer = styled.div`
           }
         }
       }
-      .title_col {
-        font-weight: 400;
-        font-size: 26px;
-        line-height: 120%;
-        color: #b3bcc5;
-        &.mt-3 {
-          margin: 30px 0;
+      .row__flex {
+        margin: 30px 0;
+        @media screen and (max-width: 768px) {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        .title_col {
+          font-weight: 400;
+          font-size: 26px;
+          line-height: 120%;
+          color: #b3bcc5;
+          &.is_mobile {
+            display: none;
+            @media screen and (max-width: 768px) {
+              background: #f5f5f5;
+              border-radius: 55px;
+              font-size: 12px;
+              line-height: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #000000;
+              padding: 15px;
+              width: 50%;
+              font-weight: 700;
+              svg {
+                display: inline-block;
+                margin-left: 10px;
+              }
+            }
+          }
+          &.mt-3 {
+            svg {
+              display: none;
+            }
+            @media screen and (max-width: 768px) {
+              background: #f5f5f5;
+              border-radius: 55px;
+              font-size: 12px;
+              line-height: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #000000;
+              padding: 15px;
+              width: 50%;
+              font-weight: 700;
+              svg {
+                display: inline-block;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+      .scroll__filter__div {
+        overflow-x: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        user-select: none;
+        &::-webkit-scrollbar {
+          height: 10px;
+          background: #f5f5f5;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #b3bcc54d;
+        }
+        &:hover {
+          &::-webkit-scrollbar {
+            background: #f5f5f5;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: #b3bcc5;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          flex-direction: row;
         }
       }
     }
     .col_two {
       width: 100%;
       padding-bottom: 26px;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
       .col_sort {
         width: max-content;
         display: flex;
@@ -330,6 +451,9 @@ export const CatalogContainer = styled.div`
         }
         @media screen and (max-width: 920px) {
           width: calc(33% - 10px);
+        }
+        @media screen and (max-width: 768px) {
+          width: calc(50% - 10px);
         }
 
         .col_item_sale {

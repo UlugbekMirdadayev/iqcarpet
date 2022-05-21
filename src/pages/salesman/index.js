@@ -24,10 +24,12 @@ import {
   CloseIcon,
   LikeIcon,
   SelectArrowIcon,
+  SortIcon,
 } from "../../components/icon";
 import Carpet1 from "../../static/img/carpet11.png";
 import Carpet2 from "../../static/img/carpet22.png";
 import Carpet3 from "../../static/img/carpet33.png";
+import { FilterIcon } from "./../../components/icon/index";
 
 export const Card = ({ data = {} }) => {
   const [selected, setSelected] = React.useState(null);
@@ -259,7 +261,14 @@ function Salesman() {
                 </div>
               </div>
               <div className="col">
-                <div className="title_col mt-3">Фильтры</div>
+                <div className="row__flex">
+                  <div className="title_col is_mobile">
+                    Сортировка <SortIcon />
+                  </div>
+                  <div className="title_col mt-3">
+                    Фильтры <FilterIcon />
+                  </div>
+                </div>
                 <div className="col__item filter">
                   <div className="row br-top">
                     <h3>Стиль</h3>
@@ -272,21 +281,25 @@ function Salesman() {
                       />
                     </button>
                   </div>
-                  {filterMaps.map((item, index) => (
-                    <div
-                      onClick={() => {
-                        setIsActive(item.type);
-                        setfilter(
-                          carps.filter((__res) => __res.category === item.type)
-                        );
-                      }}
-                      className="row"
-                      key={index}
-                    >
-                      <CheckBoxIcon isChecked={item.type === isActive} />
-                      <p>{item.name}</p>
-                    </div>
-                  ))}
+                  <div className="scroll__filter__div">
+                    {filterMaps.map((item, index) => (
+                      <div
+                        onClick={() => {
+                          setIsActive(item.type);
+                          setfilter(
+                            carps.filter(
+                              (__res) => __res.category === item.type
+                            )
+                          );
+                        }}
+                        className="row"
+                        key={index}
+                      >
+                        <CheckBoxIcon isChecked={item.type === isActive} />
+                        <p>{item.name}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
