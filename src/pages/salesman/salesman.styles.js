@@ -171,11 +171,19 @@ export const CatalogContainer = styled.div`
     justify-content: center;
     margin-top: 60px;
     margin-bottom: 40px;
+    @media screen and (max-width: 1150px) {
+      margin-top: 40px;
+    }
+
     h1 {
       font-weight: 600;
       font-size: 40px;
       line-height: 40px;
       color: #000000;
+      @media screen and (max-width: 1150px) {
+        font-size: 30px;
+        line-height: 30px;
+      }
     }
 
     small {
@@ -184,11 +192,17 @@ export const CatalogContainer = styled.div`
       line-height: 20px;
       padding-left: 20px;
       color: rgba(0, 0, 0, 0.7);
+      @media screen and (max-width: 1150px) {
+        font-size: 12px;
+      }
     }
   }
   .catelog-body {
     display: flex;
     gap: 30px;
+    @media screen and (max-width: 920px) {
+      flex-direction: column;
+    }
     .col {
       display: flex;
       flex-direction: column;
@@ -200,6 +214,10 @@ export const CatalogContainer = styled.div`
           border-radius: 20px;
           padding: 30px 20px;
           gap: 15px;
+          @media screen and (max-width: 920px) {
+            padding: 10px;
+            width: max-content;
+          }
           .row {
             display: flex;
             flex-direction: row;
@@ -282,28 +300,13 @@ export const CatalogContainer = styled.div`
         align-items: center;
         background: #f5f5f5;
         border-radius: 55px;
-        border: 1px solid #f5f5f5;
         padding: 14px 55px;
+        cursor: pointer;
         p {
-          font-style: normal;
           font-weight: 700;
           font-size: 12px;
           line-height: 16px;
-          display: flex;
-          align-items: center;
-          color: #000000;
-          margin: 0 14px;
-        }
-        .select {
-          * {
-            color: #000000 !important;
-          }
-          option {
-            background: #fff;
-            padding: 10px;
-            top: 100%;
-            display: none;
-          }
+          margin-right: 10px;
         }
         svg {
           path {
@@ -322,6 +325,12 @@ export const CatalogContainer = styled.div`
         position: relative;
         border-radius: 2px;
         width: 255px;
+        @media screen and (max-width: 1150px) {
+          width: 180px;
+        }
+        @media screen and (max-width: 920px) {
+          width: calc(33% - 10px);
+        }
 
         .col_item_sale {
           position: absolute;
@@ -367,8 +376,11 @@ export const CatalogContainer = styled.div`
             text-transform: uppercase;
             color: #000000;
             margin-bottom: 20px;
-
             margin-right: 10px;
+            @media screen and (max-width: 920px) {
+              font-size: 15px;
+              margin-bottom: 10px;
+            }
           }
         }
         .col_item_cart {
@@ -389,6 +401,10 @@ export const CatalogContainer = styled.div`
             cursor: pointer;
             background: transparent;
             user-select: none;
+            @media screen and (max-width: 920px) {
+              font-size: 13px;
+              line-height: 15px;
+            }
             &.cart_active {
               background: #0052b9;
               border: 2px solid #0052b9;

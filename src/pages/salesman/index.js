@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import HideAction from "../../components/ui/hideAction";
 import {
   CatalogContainer,
-  // CatalogContainer,
   ColumnStyled,
   SalesmanAbout,
   SalesmanContainer,
@@ -24,8 +23,8 @@ import {
   CheckBoxIcon,
   CloseIcon,
   LikeIcon,
+  SelectArrowIcon,
 } from "../../components/icon";
-import Select from "./../../components/form/select";
 import Carpet1 from "../../static/img/carpet11.png";
 import Carpet2 from "../../static/img/carpet22.png";
 import Carpet3 from "../../static/img/carpet33.png";
@@ -56,6 +55,8 @@ export const Card = ({ data = {} }) => {
             data.price.sale && {
               textDecoration: "line-through",
               color: "rgba(0, 0, 0, 0.6)",
+              fontSize: ".85rem",
+              fontWeight: "400",
             }
           }
         >
@@ -102,8 +103,8 @@ const carps = [
     img: Carpet1,
     name: "Название ковра",
     price: {
-      price: "65 000",
-      sale: "12 000",
+      price: "32 960 ₽",
+      sale: "12 000 ₽",
     },
     category: "vintage",
     status: false,
@@ -112,7 +113,7 @@ const carps = [
     img: Carpet2,
     name: "Название ковра",
     price: {
-      price: "65 000",
+      price: "65 000 ₽",
     },
     category: "oriental",
     status: {
@@ -125,7 +126,7 @@ const carps = [
     img: Carpet3,
     name: "Название ковра",
     price: {
-      price: "65 000",
+      price: "65 000 ₽",
     },
     category: "modern",
     status: {
@@ -138,8 +139,8 @@ const carps = [
     img: Carpet3,
     name: "Название ковра",
     price: {
-      price: "65 000",
-      sale: "12 000",
+      price: "65 000 ₽",
+      sale: "12 000 ₽",
     },
     category: "modern",
     status: false,
@@ -148,8 +149,8 @@ const carps = [
     img: Carpet2,
     name: "Название ковра",
     price: {
-      price: "65 000",
-      sale: "12 000",
+      price: "65 000 ₽",
+      sale: "12 000 ₽",
     },
     category: "designer",
     status: false,
@@ -158,8 +159,8 @@ const carps = [
     img: Carpet1,
     name: "Название ковра",
     price: {
-      price: "65 000",
-      sale: "12 000",
+      price: "65 000 ₽",
+      sale: "12 000 ₽",
     },
     category: "designer",
     status: false,
@@ -292,10 +293,8 @@ function Salesman() {
             <div className="col">
               <div className="col_two">
                 <div className="col_sort">
-                  <Select className="select" options={[{
-                    value: 'Сортировка',
-                    label: 'Сортировка',
-                  }]} />
+                  <p>Сортировка</p>
+                  <SelectArrowIcon />
                 </div>
               </div>
               <div className="col_items">
