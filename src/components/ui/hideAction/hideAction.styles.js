@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const HideActionStyled = styled.div`
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 15px;
   margin: 10px 0;
+  display: grid;
+  grid-template-columns: auto 40%;
 `;
 export const HideActionText = styled.h3`
   font-size: 14px;

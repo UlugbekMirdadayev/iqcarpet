@@ -62,6 +62,7 @@ export const SalesmanUserInfo = styled.div`
     }
     .mobile__user_name {
       display: inline-block;
+      margin-bottom: 0px;
     }
   }
   img {
@@ -128,6 +129,7 @@ export const SalesmanUserInfoCard = styled.div`
   }
   @media screen and (max-width: 450px) {
     background: none;
+    padding: 30px 0;
   }
 `;
 export const SalesmanHeadingTwo = styled.h2`
@@ -237,6 +239,7 @@ export const CatalogContainer = styled.div`
             gap: 15px;
             button {
               border-radius: 48px;
+              width: 70px;
               padding: 5px 10px;
               font-weight: 700;
               font-size: 12px;
