@@ -105,6 +105,7 @@ export const HeaderMobile = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 15px;
 `;
 export const HeaderMobileOpened = styled.div`
   @media screen and (min-width: 920px) {

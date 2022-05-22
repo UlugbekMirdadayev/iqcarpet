@@ -11,7 +11,7 @@ export const SalesmanContainer = styled.div`
   @media screen and (max-width: 920px) {
     background-size: 300%;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     background-size: 600%;
   }
 `;
@@ -38,7 +38,7 @@ export const SalesmanContent = styled.div`
   @media screen and (max-width: 920px) {
     padding: 20px 15px;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     gap: 10px;
   }
 `;
@@ -51,7 +51,7 @@ export const SalesmanUserInfo = styled.div`
   .mobile__user_name {
     display: none;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
     .user__info_wrapper {
@@ -78,14 +78,14 @@ export const SalesmanUserInfo = styled.div`
     line-height: 120%;
     margin: 0;
     margin-bottom: 20px;
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }
   ul {
     display: flex;
     align-items: center;
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 768px) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -93,7 +93,7 @@ export const SalesmanUserInfo = styled.div`
       margin-right: 10px;
       display: flex;
       align-items: center;
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 768px) {
         margin-bottom: 10px;
       }
       img {
@@ -127,7 +127,7 @@ export const SalesmanUserInfoCard = styled.div`
   @media screen and (max-width: 1150px) {
     max-width: none;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     background: none;
     padding: 30px 0;
   }
@@ -152,7 +152,7 @@ export const SalesmanAbout = styled.div`
     text-decoration: underline;
   }
   &.is-desktop {
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }
@@ -237,7 +237,7 @@ export const CatalogContainer = styled.div`
             flex-direction: row;
             align-items: center;
             gap: 15px;
-            
+
             button {
               border-radius: 48px;
               width: 70px;
@@ -263,12 +263,18 @@ export const CatalogContainer = styled.div`
         }
         &.filter {
           @media screen and (max-width: 768px) {
-            flex-direction: row;
+            flex-direction: column-reverse;
             display: flex;
             padding: 20px 0;
             border-top: 2px solid #dfdfdf;
             border-bottom: 2px solid #dfdfdf;
+            .row.active {
+              background-color: #0052B9;
+              color: #fff;
+              border: transparent;
+            }
           }
+
           .row {
             display: flex;
             align-items: center;
@@ -280,8 +286,19 @@ export const CatalogContainer = styled.div`
               border-radius: 55px;
               padding: 10px;
               margin: 0 5px;
+              svg {
+                display: none;
+              }
+              &::before {
+                content: '×';
+                font-size: 36px;
+                line-height: 10px;
+              }
             }
             &.br-top {
+              &::before {
+                content: none !important;
+              }
               border-top: 2px solid #dfdfdf;
               padding-top: 20px;
               justify-content: space-between;
@@ -289,7 +306,7 @@ export const CatalogContainer = styled.div`
               @media screen and (max-width: 768px) {
                 padding: 10px;
                 margin: 0 5px;
-                border: 1px solid rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(0, 0, 0, 0);
                 position: relative;
                 width: 40px;
                 height: 40px;
@@ -303,8 +320,7 @@ export const CatalogContainer = styled.div`
               @media screen and (max-width: 768px) {
                 opacity: 0;
                 font-size: 0;
-                width: 20px;
-                height: 20px;
+                border: none;
               }
             }
             button {
@@ -315,11 +331,21 @@ export const CatalogContainer = styled.div`
               cursor: pointer;
               border: 0;
               @media screen and (max-width: 768px) {
+                svg {
+                  display: none;
+                }
                 position: absolute;
                 top: 0;
                 right: 0;
                 left: 0;
                 bottom: 0;
+                width: max-content;
+
+                &::after {
+                  color: #0052b9;
+                  font-weight: 700;
+                  content: 'Сбросить фильтры';
+                }
               }
             }
             p {
@@ -415,7 +441,9 @@ export const CatalogContainer = styled.div`
     }
     .col_two {
       width: 100%;
-      padding-bottom: 26px;
+      padding-bottom: 13px;
+      border-bottom: 2px solid #dfdfdf;
+      margin-bottom: 13px;
       @media screen and (max-width: 768px) {
         display: none;
       }
@@ -485,12 +513,13 @@ export const CatalogContainer = styled.div`
         .col_item__title {
           p {
             font-style: normal;
-            font-weight: 700;
+            font-weight: 500;
             font-size: 14px;
             line-height: 120%;
             text-transform: uppercase;
             color: #000000;
             margin-bottom: 20px;
+            text-shadow: 0 0 0.1px black;
           }
         }
         .col_item_price {

@@ -272,7 +272,10 @@ function Salesman() {
                 <div className="col__item filter">
                   <div className="row br-top">
                     <h3>Стиль</h3>
-                    <button>
+                    <button onClick={() => {
+                          setfilter(carps);
+                          setIsActive(null);
+                        }}>
                       <CloseIcon
                         onClick={() => {
                           setfilter(carps);
@@ -293,7 +296,7 @@ function Salesman() {
                           );
                         }} 
                         
-                        className="row"
+                        className={`row ${item.type === isActive ? "active" : ''} `}
                         key={index}
                       >
                         <CheckBoxIcon isChecked={item.type === isActive} />

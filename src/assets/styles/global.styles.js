@@ -38,8 +38,8 @@ export const Container = styled.div`
     max-width: 720px;
     padding: 0 20px;
   }
-  @media screen and (max-width: 450px) {
-    max-width: 360px;
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
     padding: 0 10px;
   }
 `;
