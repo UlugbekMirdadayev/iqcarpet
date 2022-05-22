@@ -292,7 +292,6 @@ function Salesman() {
                             )
                           );
                         }} 
-                        
                         className="row"
                         key={index}
                       >
