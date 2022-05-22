@@ -291,7 +291,8 @@ function Salesman() {
                               (__res) => __res.category === item.type
                             )
                           );
-                        }}
+                        }} 
+                        
                         className="row"
                         key={index}
                       >

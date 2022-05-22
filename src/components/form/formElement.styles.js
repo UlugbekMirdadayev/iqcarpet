@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const SelectWrapper = styled.div`
   position: relative;
-  min-width: 70px;
   z-index: 22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
 `;
 
 export const SelectedOption = styled.div`
@@ -11,12 +14,14 @@ export const SelectedOption = styled.div`
   font-weight: 400;
   font-size: 14px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   cursor: pointer;
   gap: 10px;
+  padding: 5px;
   width: max-content;
   user-select: none;
+  width: 60px;
 `;
 export const SelectStyled = styled.div`
   display: flex;
@@ -30,6 +35,8 @@ export const SelectStyled = styled.div`
   position: absolute;
   background: #000;
   user-select: none;
+  top: 100%;
+  width: 100%;
 
   option {
     color: #fff;

@@ -9,7 +9,7 @@ export default function HideAction({
   hidden = "Скрыть",
   show = "Показатель не определен",
 }) {
-  const [hideAction, setHideAction] = React.useState(false);
+  const [hideAction, setHideAction] = React.useState(true);
   return (
     <HideActionStyled>
       {hideAction ? (
