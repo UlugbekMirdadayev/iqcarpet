@@ -237,6 +237,7 @@ export const CatalogContainer = styled.div`
             flex-direction: row;
             align-items: center;
             gap: 15px;
+            
             button {
               border-radius: 48px;
               width: 70px;
