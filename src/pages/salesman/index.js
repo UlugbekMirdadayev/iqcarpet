@@ -259,6 +259,10 @@ function Salesman() {
                     <ArrowIcon />
                   </div>
                 </div>
+                <div className="title__catalog is-mobile">
+                  <h1>Каталог продавца</h1>
+                  <small>2 620 товаров</small>
+                </div>
               </div>
               <div className="col">
                 <div className="row__flex">
@@ -272,10 +276,12 @@ function Salesman() {
                 <div className="col__item filter">
                   <div className="row br-top">
                     <h3>Стиль</h3>
-                    <button onClick={() => {
-                          setfilter(carps);
-                          setIsActive(null);
-                        }}>
+                    <button
+                      onClick={() => {
+                        setfilter(carps);
+                        setIsActive(null);
+                      }}
+                    >
                       <CloseIcon
                         onClick={() => {
                           setfilter(carps);
@@ -288,19 +294,24 @@ function Salesman() {
                     {filterMaps.map((item, index) => (
                       <div
                         onClick={() => {
-                          setIsActive(item.type);
                           setfilter(
-                            carps.filter(
-                              (__res) => __res.category === item.type
-                            )
+                            item?.type !== isActive
+                              ? carps.filter(
+                                  (__res) => __res.category === item?.type
+                                )
+                              : carps
                           );
-                        }} 
-                        
-                        className={`row ${item.type === isActive ? "active" : ''} `}
+                          setIsActive(
+                            item?.type !== isActive ? item?.type : null
+                          );
+                        }}
+                        className={`row ${
+                          item?.type === isActive ? "active" : ""
+                        } `}
                         key={index}
                       >
-                        <CheckBoxIcon isChecked={item.type === isActive} />
-                        <p>{item.name}</p>
+                        <CheckBoxIcon isChecked={item?.type === isActive} />
+                        <p>{item?.name}</p>
                       </div>
                     ))}
                   </div>

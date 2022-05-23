@@ -42,4 +42,8 @@ export const Container = styled.div`
     max-width: 100%;
     padding: 0 10px;
   }
+  @media screen and (max-width: 450px) {
+    max-width: 100%;
+    padding: 0 5px;
+  }
 `;

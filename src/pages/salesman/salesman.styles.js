@@ -3,22 +3,21 @@ import salesmanBg from "../../static/img/salesmanbg.png";
 
 export const SalesmanContainer = styled.div`
   height: 100%;
-  background-size: 100%;
   background-repeat: no-repeat;
   background-image: url(${salesmanBg});
   padding-top: 20px;
   margin-bottom: 100px;
-  @media screen and (max-width: 920px) {
-    background-size: 300%;
-  }
+  background-size: 100% 340px;
+
   @media screen and (max-width: 768px) {
-    background-size: 600%;
+    background-size: 100% 460px;
   }
 `;
 
 export const ColumnStyled = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const SalesmanUserName = styled.div``;
@@ -37,9 +36,12 @@ export const SalesmanContent = styled.div`
   }
   @media screen and (max-width: 920px) {
     padding: 20px 15px;
+    align-items: flex-start;
   }
   @media screen and (max-width: 768px) {
     gap: 10px;
+    border-radius: 2px;
+    padding: 20px 10px;
   }
 `;
 export const SalesmanUserInfo = styled.div`
@@ -170,7 +172,7 @@ export const CatalogContainer = styled.div`
   .title__catalog {
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 60px;
     margin-bottom: 40px;
     @media screen and (max-width: 1150px) {
@@ -180,6 +182,13 @@ export const CatalogContainer = styled.div`
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
+      padding-left: 10px;
+      display: none;
+      &.is-mobile {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
     }
 
     h1 {
@@ -226,11 +235,19 @@ export const CatalogContainer = styled.div`
           flex-direction: column;
           background: #f6f9fe;
           border-radius: 20px;
-          padding: 30px 20px;
+          padding: 32px 22px;
           gap: 15px;
           @media screen and (max-width: 920px) {
-            padding: 10px;
             width: max-content;
+          }
+          @media screen and (max-width: 768px) {
+            width: max-content;
+            padding-left: 18px;
+            padding-right: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            gap: 7.5px;
+            margin-top: 40px;
           }
           .row {
             display: flex;
@@ -241,7 +258,7 @@ export const CatalogContainer = styled.div`
             button {
               border-radius: 48px;
               width: 70px;
-              padding: 5px 10px;
+              padding: 6px 12px;
               font-weight: 700;
               font-size: 12px;
               color: #000000;
@@ -259,6 +276,16 @@ export const CatalogContainer = styled.div`
                 color: #fff;
               }
             }
+            > p {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 120%;
+              color: #000000;
+            }
+            > svg {
+              width: 14px;
+              height: 14px;
+            }
           }
         }
         &.filter {
@@ -269,7 +296,7 @@ export const CatalogContainer = styled.div`
             border-top: 2px solid #dfdfdf;
             border-bottom: 2px solid #dfdfdf;
             .row.active {
-              background-color: #0052B9;
+              background-color: #0052b9;
               color: #fff;
               border: transparent;
             }
@@ -290,7 +317,7 @@ export const CatalogContainer = styled.div`
                 display: none;
               }
               &::before {
-                content: '×';
+                content: "×";
                 font-size: 36px;
                 line-height: 10px;
               }
@@ -344,7 +371,7 @@ export const CatalogContainer = styled.div`
                 &::after {
                   color: #0052b9;
                   font-weight: 700;
-                  content: 'Сбросить фильтры';
+                  content: "Сбросить фильтры";
                 }
               }
             }
@@ -352,6 +379,10 @@ export const CatalogContainer = styled.div`
               font-weight: 400;
               font-size: 16px;
               line-height: 120%;
+              @media screen and (max-width: 768px) {
+                font-size: 14px;
+                font-weight: 550;
+              }
             }
           }
         }
@@ -382,6 +413,10 @@ export const CatalogContainer = styled.div`
               padding: 15px;
               width: 50%;
               font-weight: 700;
+              @media screen and (max-width: 450px) {
+                line-height: 12px;
+                padding: 13px;
+              }
               svg {
                 display: inline-block;
                 margin-left: 10px;
