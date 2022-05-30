@@ -323,7 +323,7 @@ export const SortIcon = ({ className = "icon", ...props }) => (
   </svg>
 );
 
-export const Buy_Icon = ({ className = "icon" }) => (
+export const BuyIcon = ({ className = "icon" }) => (
   <svg
   className={className}
     xmlns="http://www.w3.org/2000/svg"

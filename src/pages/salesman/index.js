@@ -20,7 +20,7 @@ import location from "../../static/img/location.svg";
 import userStatic from "../../static/img/user-static.svg";
 import {
   ArrowIcon,
-  Buy_Icon,
+  BuyIcon,
   CheckBoxIcon,
   CloseIcon,
   LikeIcon,
@@ -73,7 +73,7 @@ export const Card = ({ data = {} }) => {
           onClick={() => setSelected(!selected)}
         >
           {selected ? "В корзине!" : "В корзину"}
-          {selected ? "": <Buy_Icon className="Buy_name"/>}
+          {selected ? "": <BuyIcon className="Buy_name"/>}
           
         </button>
         <LikeIcon onClick={() => setLiked(!liked)} liked={liked} />
