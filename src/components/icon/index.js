@@ -322,3 +322,46 @@ export const SortIcon = ({ className = "icon", ...props }) => (
     />
   </svg>
 );
+
+export const Buy_Icon = ({ className = "icon" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="21"
+    height="20"
+    viewBox="0 0 21 20"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.6722 17.5703C6.0942 17.5703 6.4372 17.9133 6.4372 18.3353C6.4372 18.7573 6.0942 19.0993 5.6722 19.0993C5.2502 19.0993 4.9082 18.7573 4.9082 18.3353C4.9082 17.9133 5.2502 17.5703 5.6722 17.5703Z"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M16.9252 17.5703C17.3472 17.5703 17.6902 17.9133 17.6902 18.3353C17.6902 18.7573 17.3472 19.0993 16.9252 19.0993C16.5032 19.0993 16.1602 18.7573 16.1602 18.3353C16.1602 17.9133 16.5032 17.5703 16.9252 17.5703Z"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M1 1L3.08 1.36L4.043 12.833C4.121 13.768 4.902 14.486 5.84 14.486H16.752C17.648 14.486 18.408 13.828 18.537 12.94L19.486 6.382C19.603 5.573 18.976 4.849 18.159 4.849H3.414"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.376 8.54504H15.149"
+      stroke="#0052B9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

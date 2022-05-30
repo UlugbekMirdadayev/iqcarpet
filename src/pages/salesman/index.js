@@ -20,6 +20,7 @@ import location from "../../static/img/location.svg";
 import userStatic from "../../static/img/user-static.svg";
 import {
   ArrowIcon,
+  Buy_Icon,
   CheckBoxIcon,
   CloseIcon,
   LikeIcon,
@@ -72,6 +73,8 @@ export const Card = ({ data = {} }) => {
           onClick={() => setSelected(!selected)}
         >
           {selected ? "В корзине!" : "В корзину"}
+          {selected ? "": <Buy_Icon/>}
+          
         </button>
         <LikeIcon onClick={() => setLiked(!liked)} liked={liked} />
       </div>
@@ -259,10 +262,10 @@ function Salesman() {
                     <ArrowIcon />
                   </div>
                 </div>
-                <div className="title__catalog is-mobile">
+                {/* <div className="title__catalog is-mobile">
                   <h1>Каталог продавца</h1>
                   <small>2 620 товаров</small>
-                </div>
+                </div> */}
               </div>
               <div className="col">
                 <div className="row__flex">

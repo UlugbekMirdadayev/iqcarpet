@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// Header.style.js
+import { NavLink } from "react-router-dom";
 export const HeaderStyled = styled.div`
   display: flex;
   justify-content: space-between;
@@ -132,4 +132,23 @@ export const HeaderMobileOpened = styled.div`
     margin-top: 10px;
     transition: all 0.3s ease-in-out;
   }
+`;
+export const ActiveNavbarItem = styled(NavLink)`
+  &.active {
+    border-radius: 2px;
+    background: #0052b9;
+  }
+`;
+export const NavbarItem = styled.div`
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  gap: 10px;
+  width: auto;
+  height: 39px;
+  font-weight: 700;
+  border-radius: 2px;
+  margin: 0 20px;
 `;

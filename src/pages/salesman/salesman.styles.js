@@ -171,6 +171,7 @@ export const SalesmanAbout = styled.div`
 export const CatalogContainer = styled.div`
   .title__catalog {
     display: flex;
+    margin-left: 24%;
     align-items: flex-end;
     justify-content: flex-start;
     margin-top: 60px;
@@ -389,6 +390,7 @@ export const CatalogContainer = styled.div`
       }
       .row__flex {
         margin: 30px 0;
+        margin-bottom: 13px;
         @media screen and (max-width: 768px) {
           display: flex;
           flex-direction: row;
@@ -476,9 +478,9 @@ export const CatalogContainer = styled.div`
     }
     .col_two {
       width: 100%;
-      padding-bottom: 13px;
+      padding-bottom: 26px;
       border-bottom: 2px solid #dfdfdf;
-      margin-bottom: 13px;
+      margin-bottom: 40px;
       @media screen and (max-width: 768px) {
         display: none;
       }
@@ -508,6 +510,7 @@ export const CatalogContainer = styled.div`
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 10px;
+      row-gap: 80px;
 
       .col_item {
         position: relative;
@@ -548,7 +551,7 @@ export const CatalogContainer = styled.div`
         .col_item__title {
           p {
             font-style: normal;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 14px;
             line-height: 120%;
             text-transform: uppercase;
@@ -560,12 +563,14 @@ export const CatalogContainer = styled.div`
         .col_item_price {
           display: flex;
           align-items: center;
+    align-items: flex-start;
           p {
-            font-style: normal;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 26px;
             line-height: 120%;
-            text-transform: uppercase;
+            color: #000000;
+            flex: none;
+            order: 1;
             color: #000000;
             margin-bottom: 20px;
             margin-right: 10px;
@@ -580,22 +585,40 @@ export const CatalogContainer = styled.div`
           align-items: center;
           justify-content: space-between;
           button {
-            padding: 6px 25px;
+          
+            padding: 10px 28px;
             border-color: #0052b9;
             border: 2px solid #0052b9;
             border-radius: 20px;
             font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 19px;
+
             text-align: center;
             color: #0052b9;
             cursor: pointer;
             background: transparent;
             user-select: none;
+            display: flex;
+            gap: 11px;
+            font-weight: 600;
+            font-size: 14px;align-items: center;
+            justify-content: center;
+            line-height: 19px;
+            @media screen and (max-width:1150px) {
+              padding: 7px 18px;
+              
+            }
+            @media screen and (min-width:1250px) {
+              min-width: 160px;
+              
+            }
             @media screen and (max-width: 920px) {
               font-size: 13px;
               line-height: 15px;
+            }
+            @media screen and (max-width:1150px) {
+              padding: 5px 15px;
+              font-size: 11px;
+              
             }
             &.cart_active {
               background: #0052b9;

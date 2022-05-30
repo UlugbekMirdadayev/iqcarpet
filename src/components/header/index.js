@@ -9,9 +9,9 @@ import {
   HeaderNav,
   HeaderRow,
   HeaderStyled,
-  SelectBarStyled,
+  SelectBarStyled,ActiveNavbarItem,
   StatusBarItem,
-  StatusBarItemCount,
+  StatusBarItemCount,NavbarItem,
   StatusBarStyled,
 } from "./header.style";
 import Logo from "../../static/logo.svg";
@@ -56,12 +56,23 @@ export default function Header() {
             <img src={Logo} alt="" />
           </HeaderLogo>
           <HeaderNav>
-            <PrimaryButton>
-              Каталог <CatalogIcon />
-            </PrimaryButton>
-            <HeaderLinks>
-              <NavLink to="/">Продавцы</NavLink>
-              <NavLink to="/">Контакты</NavLink>
+          <HeaderLinks>
+            <ActiveNavbarItem to="/">
+              
+            
+                
+                <NavbarItem>Каталог<CatalogIcon /></NavbarItem>
+                
+              
+            </ActiveNavbarItem>
+            <ActiveNavbarItem to="/about">
+              
+              <NavbarItem>О проекте</NavbarItem>
+            </ActiveNavbarItem>
+            <ActiveNavbarItem to="/contacts">
+              
+              <NavbarItem>Контакты</NavbarItem>
+            </ActiveNavbarItem>
             </HeaderLinks>
           </HeaderNav>
           <StatusBarStyled>
