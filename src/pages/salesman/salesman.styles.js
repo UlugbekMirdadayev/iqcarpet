@@ -586,7 +586,8 @@ export const CatalogContainer = styled.div`
           justify-content: space-between;
           button {
           
-            padding: 10px 28px;
+            padding: 10px 26px;
+            
             border-color: #0052b9;
             border: 2px solid #0052b9;
             border-radius: 20px;
@@ -603,11 +604,13 @@ export const CatalogContainer = styled.div`
             font-size: 14px;align-items: center;
             justify-content: center;
             line-height: 19px;
+            height: 40px;
             @media screen and (max-width:1150px) {
               padding: 7px 18px;
               
             }
             @media screen and (min-width:1250px) {
+              max-width: 160px;
               min-width: 160px;
               
             }
