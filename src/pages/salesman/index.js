@@ -73,7 +73,7 @@ export const Card = ({ data = {} }) => {
           onClick={() => setSelected(!selected)}
         >
           {selected ? "В корзине!" : "В корзину"}
-          {selected ? "": <Buy_Icon/>}
+          {selected ? "": <Buy_Icon className="Buy_name"/>}
           
         </button>
         <LikeIcon onClick={() => setLiked(!liked)} liked={liked} />

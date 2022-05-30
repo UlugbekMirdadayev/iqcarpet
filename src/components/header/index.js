@@ -93,8 +93,8 @@ export default function Header() {
         <HeaderMobile>
           <MenuIcon isOpen={isMobile} onClick={() => setIsMobile(!isMobile)} />
           <SearchIcon />
-          <HeaderLogo>
-            <img src={Logo} alt="" />
+          <HeaderLogo className="MobileLogo">
+            <img  src={Logo} alt="" />
           </HeaderLogo>
           <HeartIcon />
           <CartIcon />

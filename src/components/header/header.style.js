@@ -106,6 +106,11 @@ export const HeaderMobile = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
+  .MobileLogo{
+    @media screen and (max-width: 400px) {
+      width: 120px;
+    }
+  }
 `;
 export const HeaderMobileOpened = styled.div`
   @media screen and (min-width: 920px) {

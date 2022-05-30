@@ -53,6 +53,9 @@ export const SalesmanUserInfo = styled.div`
   .mobile__user_name {
     display: none;
   }
+  @media screen and (max-width: 420px) {
+    gap: 20px;
+  }
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -110,7 +113,9 @@ export const SalesmanUserInfo = styled.div`
     display: flex;
     align-items: center;
     margin-top: 20px;
-
+    @media (max-width: 400px) {
+      margin-top: 5px;
+    }
     img {
       width: 35px;
       height: 35px;
@@ -132,6 +137,10 @@ export const SalesmanUserInfoCard = styled.div`
   @media screen and (max-width: 768px) {
     background: none;
     padding: 30px 0;
+  }
+  @media screen and (max-width: 408px) {
+    background: none;
+    padding: 10px 0;
   }
 `;
 export const SalesmanHeadingTwo = styled.h2`
@@ -191,6 +200,12 @@ export const CatalogContainer = styled.div`
         margin-bottom: 30px;
       }
     }
+    /*
+     @media screen and (max-width: 400px) {
+     display: flex;
+     margin: 0;
+     padding: 0%;
+    } */
 
     h1 {
       font-weight: 600;
@@ -227,9 +242,17 @@ export const CatalogContainer = styled.div`
     @media screen and (max-width: 920px) {
       flex-direction: column;
     }
+    @media screen and (max-width: 400px) {
+      padding: 10px;
+    }
     .col {
       display: flex;
       flex-direction: column;
+      .Buy_name {
+        @media screen and (max-width: 400px) {
+          display: none;
+        }
+      }
       .col__item {
         &.box {
           display: flex;
@@ -241,6 +264,7 @@ export const CatalogContainer = styled.div`
           @media screen and (max-width: 920px) {
             width: max-content;
           }
+
           @media screen and (max-width: 768px) {
             width: max-content;
             padding-left: 18px;
@@ -249,6 +273,9 @@ export const CatalogContainer = styled.div`
             padding-bottom: 5px;
             gap: 7.5px;
             margin-top: 40px;
+          }
+          @media screen and (max-width: 420px) {
+            margin-top: 30px;
           }
           .row {
             display: flex;
@@ -301,6 +328,10 @@ export const CatalogContainer = styled.div`
               color: #fff;
               border: transparent;
             }
+          }
+          @media screen and (max-width: 408px) {
+            gap: 5px;
+            padding-bottom: 5px;
           }
 
           .row {
@@ -511,7 +542,9 @@ export const CatalogContainer = styled.div`
       flex-wrap: wrap;
       gap: 10px;
       row-gap: 80px;
-
+      @media screen and (max-width: 450px) {
+        row-gap: 30px;
+      }
       .col_item {
         position: relative;
         border-radius: 2px;
@@ -558,12 +591,15 @@ export const CatalogContainer = styled.div`
             color: #000000;
             margin-bottom: 20px;
             text-shadow: 0 0 0.1px black;
+            @media (max-width: 450px) {
+              font-weight: 500;
+            }
           }
         }
         .col_item_price {
           display: flex;
           align-items: center;
-    align-items: flex-start;
+          align-items: flex-start;
           p {
             font-weight: 700;
             font-size: 26px;
@@ -585,9 +621,8 @@ export const CatalogContainer = styled.div`
           align-items: center;
           justify-content: space-between;
           button {
-          
             padding: 10px 26px;
-            
+
             border-color: #0052b9;
             border: 2px solid #0052b9;
             border-radius: 20px;
@@ -601,27 +636,25 @@ export const CatalogContainer = styled.div`
             display: flex;
             gap: 11px;
             font-weight: 600;
-            font-size: 14px;align-items: center;
+            font-size: 14px;
+            align-items: center;
             justify-content: center;
             line-height: 19px;
             height: 40px;
-            @media screen and (max-width:1150px) {
+            @media screen and (max-width: 1150px) {
               padding: 7px 18px;
-              
             }
-            @media screen and (min-width:1250px) {
+            @media screen and (min-width: 1250px) {
               max-width: 160px;
               min-width: 160px;
-              
             }
             @media screen and (max-width: 920px) {
               font-size: 13px;
               line-height: 15px;
             }
-            @media screen and (max-width:1150px) {
+            @media screen and (max-width: 1150px) {
               padding: 5px 15px;
               font-size: 11px;
-              
             }
             &.cart_active {
               background: #0052b9;
@@ -629,6 +662,13 @@ export const CatalogContainer = styled.div`
               border-radius: 4px;
               color: #fff;
               font-weight: 700;
+            }
+            @media screen and (max-width: 400px) {
+              max-width: 103px;
+              padding: 6px 16px;
+              height: auto;
+              min-width: 103px;
+              border: 2px solid #0052b9;
             }
           }
           svg {
