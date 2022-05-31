@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../../assets/styles/global.styles";
 import { NavLink } from "react-router-dom";
+import { Container } from "../../assets/styles/global.styles";
 import HideAction from "../../components/ui/hideAction";
 import {
   CatalogContainer,
@@ -30,7 +30,7 @@ import {
 import Carpet1 from "../../static/img/carpet11.png";
 import Carpet2 from "../../static/img/carpet22.png";
 import Carpet3 from "../../static/img/carpet33.png";
-import { FilterIcon } from "./../../components/icon/index";
+import { FilterIcon } from "./../../components/icon";
 
 export const Card = ({ data = {} }) => {
   const [selected, setSelected] = React.useState(null);
