@@ -106,6 +106,10 @@ export const SalesmanUserInfo = styled.div`
         height: 20px;
         margin-right: 10px;
         object-fit: contain;
+        @media screen and (max-width: 450px) {
+          width: 27px;
+          height: 27px;
+        }
       }
     }
   }
@@ -120,6 +124,10 @@ export const SalesmanUserInfo = styled.div`
       width: 35px;
       height: 35px;
       margin-right: 10px;
+      @media (max-width: 450px) {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 `;
@@ -193,19 +201,21 @@ export const CatalogContainer = styled.div`
       align-items: flex-start;
       justify-content: flex-start;
       padding-left: 10px;
-      display: none;
+      /* display: none; */
       &.is-mobile {
         display: flex;
         margin-top: 20px;
         margin-bottom: 30px;
       }
     }
-    /*
-     @media screen and (max-width: 400px) {
-     display: flex;
-     margin: 0;
-     padding: 0%;
-    } */
+
+    @media screen and (max-width: 450px) {
+      display: flex;
+      margin: 0px !important;
+      padding: 0%;
+      padding-top: 22px !important;
+      gap: 12px;
+    }
 
     h1 {
       font-weight: 600;
@@ -218,6 +228,10 @@ export const CatalogContainer = styled.div`
       }
       @media screen and (max-width: 768px) {
         font-size: 26px;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 30px;
+        font-weight: 700;
       }
     }
 
@@ -577,8 +591,17 @@ export const CatalogContainer = styled.div`
         }
         .col_item__img {
           margin-bottom: 20px;
+          @media screen and (max-width: 450px) {
+            margin-bottom: 5px;
+          }
           img {
             width: 100%;
+            transition: 0.3s;
+            &:hover {
+              /* transform: scale(1.3); */
+              filter: drop-shadow(2px 4px 6px black);
+              cursor: pointer;
+            }
           }
         }
         .col_item__title {
@@ -593,6 +616,7 @@ export const CatalogContainer = styled.div`
             text-shadow: 0 0 0.1px black;
             @media (max-width: 450px) {
               font-weight: 500;
+              font-size: 18px;
             }
           }
         }
@@ -622,7 +646,7 @@ export const CatalogContainer = styled.div`
           justify-content: space-between;
           button {
             padding: 10px 26px;
-
+            white-space: nowrap;
             border-color: #0052b9;
             border: 2px solid #0052b9;
             border-radius: 20px;
@@ -641,6 +665,15 @@ export const CatalogContainer = styled.div`
             justify-content: center;
             line-height: 19px;
             height: 40px;
+            transition: 0.3s;
+            &:hover {
+              background-color: #0052b9;
+              color: #fff;
+            }
+            &:hover svg path {
+              stroke: #fff;
+              color: #fff;
+            }
             @media screen and (max-width: 1150px) {
               padding: 7px 18px;
             }
@@ -655,6 +688,9 @@ export const CatalogContainer = styled.div`
             @media screen and (max-width: 1150px) {
               padding: 5px 15px;
               font-size: 11px;
+            }
+            @media screen and (max-width: 450px) {
+              font-size: 16px;
             }
             &.cart_active {
               background: #0052b9;

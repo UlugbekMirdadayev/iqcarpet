@@ -9,10 +9,12 @@ import {
   HeaderNav,
   HeaderRow,
   HeaderStyled,
-  SelectBarStyled,ActiveNavbarItem,
+  SelectBarStyled,
+  ActiveNavbarItem,
   StatusBarItem,
-  StatusBarItemCount,NavbarItem,
-  StatusBarStyled,
+  StatusBarItemCount,
+  NavbarItem,
+  StatusBarStyled
 } from "./header.style";
 import Logo from "../../static/logo.svg";
 import { PrimaryButton } from "../ui/button";
@@ -23,56 +25,53 @@ import { MenuIcon } from "./../icon/index";
 const Courses = [
   {
     label: "USD",
-    value: "USD",
+    value: "USD"
   },
   {
     label: "RUB",
-    value: "RUB",
+    value: "RUB"
   },
   {
     label: "EUR",
-    value: "EUR",
-  },
+    value: "EUR"
+  }
 ];
 
 const Languages = [
   {
     label: "RU",
-    value: "Ru",
+    value: "Ru"
   },
   {
     label: "EN",
-    value: "En",
-  },
+    value: "En"
+  }
 ];
 
 export default function Header() {
   const [isMobile, setIsMobile] = React.useState(false);
   return (
     <HeaderStyled>
+      
       <Container>
         <HeaderRow>
           <HeaderLogo>
             <img src={Logo} alt="" />
           </HeaderLogo>
           <HeaderNav>
-          <HeaderLinks>
-            <ActiveNavbarItem to="/">
-              
-            
-                
-                <NavbarItem>Каталог<CatalogIcon /></NavbarItem>
-                
-              
-            </ActiveNavbarItem>
-            <ActiveNavbarItem to="/about">
-              
-              <NavbarItem>О проекте</NavbarItem>
-            </ActiveNavbarItem>
-            <ActiveNavbarItem to="/contacts">
-              
-              <NavbarItem>Контакты</NavbarItem>
-            </ActiveNavbarItem>
+            <HeaderLinks>
+              <ActiveNavbarItem to="/">
+                <NavbarItem>
+                  Каталог
+                  <CatalogIcon />
+                </NavbarItem>
+              </ActiveNavbarItem>
+              <ActiveNavbarItem to="/about">
+                <NavbarItem>О проекте</NavbarItem>
+              </ActiveNavbarItem>
+              <ActiveNavbarItem to="/contacts">
+                <NavbarItem>Контакты</NavbarItem>
+              </ActiveNavbarItem>
             </HeaderLinks>
           </HeaderNav>
           <StatusBarStyled>
@@ -94,7 +93,7 @@ export default function Header() {
           <MenuIcon isOpen={isMobile} onClick={() => setIsMobile(!isMobile)} />
           <SearchIcon />
           <HeaderLogo className="MobileLogo">
-            <img  src={Logo} alt="" />
+            <img src={Logo} alt="" />
           </HeaderLogo>
           <HeartIcon />
           <CartIcon />
